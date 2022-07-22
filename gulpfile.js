@@ -41,6 +41,7 @@ const paths = {
 }
 
 // Очистить каталог dist, удалить все кроме изображений
+// ['dist/*', '!dist/img']
 function clean() {
   return del(['dist/*', '!dist/img'])
 }
@@ -61,7 +62,7 @@ function html() {
 function styles() {
   return gulp.src(paths.styles.src)
   .pipe(sourcemaps.init())
-  //.pipe(less())
+  .pipe(less())
   //.pipe(stylus())
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer({

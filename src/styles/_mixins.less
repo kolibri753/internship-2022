@@ -1,0 +1,15 @@
+@import '_variables.less';
+
+.responsive(@minWidth; @content) {
+  @media (min-width: @minWidth) {
+      @content();
+  }
+}
+
+.transition(@x; @x:some){
+  -webkit-transition: @x;
+  -moz-transition: @x;
+  -ms-transition: @x;
+  -o-transition: @x;
+  transition: @x;
+}

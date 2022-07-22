@@ -1,0 +1,68 @@
+@import '../styles/_variables.less';
+@import '../styles/_iconsfont.less';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// ul[class],
+// ol[class] {
+//   padding: 0;
+// }
+
+// ul[class],
+// ol[class] {
+//   margin: 0;
+// }
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+figure,
+input {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+// html,
+// body {
+//   height: 100%;
+// }
+
+html {
+  font-family: @montserrat;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+button {
+  background-color: inherit;
+  font-family: @montserrat;
+  border: 0;
+  cursor: pointer;
+}
