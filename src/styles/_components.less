@@ -1,14 +1,6 @@
 @import "_variables.less";
 @import "_mixins.less";
 
-.wrapper {
-  padding: 1.07rem;
-
-  .responsive(@xxl; {
-    padding: 1.07rem 12.86rem;
-   });
-}
-
 .burger {
   background: url(../img/burger.svg) no-repeat center center;
 }
@@ -195,7 +187,7 @@
 }
 
 .rating {
-  //Fix (doesn't work with pseudoclass?)
+
   &__icon {
     
     &:hover::before,
@@ -239,7 +231,7 @@
     width: 4.38em;
     height: 2.25em;
     text-align: center;
-    color: white;
+    color: @white;
     font-size: 8px;
     font-weight: 600;
 
@@ -250,6 +242,9 @@
 
   &__img {
     width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    
     padding: 0.64em;
   }
 
@@ -271,45 +266,10 @@
     flex-direction: row-reverse;
   }
 
-  //----Rating using svg stars in html (worked)----
-
-  // &__star {
-  //   display: inline-block;
-  //   width: 0.85em;
-  //   height: 0.85em;
-  //   cursor: pointer;
-  //   // background: url(../img/star.svg) no-repeat center center;
-  //   // background-size: cover;
-
-  //   // filter: invert(98%) sepia(30%) saturate(4693%) hue-rotate(318deg) brightness(116%) contrast(109%);
-  //   fill: #cdcdcd;
-
-  //   .responsive(@lg; {
-  //     transform: scale(1.5);
-  //   });
-
-  //   circle,
-  //   line,
-  //   path {
-  //     fill: #cdcdcd;
-  //   }
-
-  //   &:hover,
-  //   &:hover ~ & {
-  //     fill: @yellow;
-
-  //     circle,
-  //     line,
-  //     path {
-  //       fill: @yellow;
-  //     }
-  //   }
-  // }
-
   &__reviews {
     display: block;
     font-size: 0.7em;
-    color: #929298;
+    color: @dark-gray;
     margin: 1em 0.5em 1em;
 
     .responsive(@lg; {
@@ -327,33 +287,4 @@
   &__btn-buy {
     display: none;
   }
-
-  //----hover animation for product----
-  // &--new::before,
-  // &--top::before,
-  // &--discount::before {
-  //   position: relative;
-  //   z-index: 2;
-  // }
-
-  // &__img,
-  // &__title,
-  // &__stars,
-  // &__reviews,
-  // &__price {
-  //   position: relative;
-  //   z-index: 1;
-  // }
-
-  // &:hover::after  {
-  //   content: "";
-  //   position: absolute;
-  //   display: block;
-  //   top: 0.64em;
-  //   height: 115%;
-  //   width: 100%;
-  //   background-color: @white;
-  //   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  //   z-index: 0;
-  // }
 }
