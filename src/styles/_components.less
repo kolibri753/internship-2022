@@ -16,7 +16,7 @@
   text-transform: uppercase;
 
   &:hover {
-    background: linear-gradient(to bottom right, @blue,#2687E0);  
+    background: linear-gradient(to bottom right, @blue, @darker-blue);
   }
 
   .responsive(@lg; {
@@ -51,66 +51,62 @@
   gap: 2em;
   text-transform: uppercase;
 
-  .current__item {
-    position: relative;
-
-    &::after {
-      content: "";
-      width: 100%;
-      display: block;
-      position: absolute;
-      height: 4px;
-      background-color: @blue;
-      bottom: -25px;
-    }
-  }
-
   &__item {
-   .transition(all 0.2s ease-in-out);
+    .transition(all 0.2s ease-in-out);
 
     &:hover {
       color: @blue;
+    }
+  }
+
+  &__link {
+    padding: 1.07em 0em 2.07em 0em;
+
+    &:focus {
+      border-bottom: 3px solid @blue;
     }
   }
 }
 
 .list {
   display: flex;
+  gap: 1em;
   justify-self: end;
-  gap: 2em;
   align-items: flex-start;
 
   &__item {
     height: 100%;
-  }
-
-  &__item + &__item + &__item {
-    display: none;
-    position: relative;
-
-    &::after {
-      content: "3";
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 500;
-      color: @white;
-      position: absolute;
-      top: -7px;
-      right: -4px;
-      width: 1.25rem;
-      height: 1.25rem;
-      background-color: @blue;
-      border-radius: 50%;
+    
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-right: 1em;
     }
-
-    .responsive(@lg; {
-      display: block;
-    });
   }
 
   &__btn {
     height: 100%;
+    padding-top: 1em;
+
+    &--amount {
+      position: relative;
+      padding-right: 1em;
+
+      &::after {
+        content: "3";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        color: @white;
+        position: absolute;
+        top: 5px;
+        right: 1px;
+        width: 1.25rem;
+        height: 1.25rem;
+        background-color: @blue;
+        border-radius: 50%;
+      }
+    }
   }
 }
 
@@ -187,9 +183,7 @@
 }
 
 .rating {
-
   &__icon {
-    
     &:hover::before,
     &:hover::before ~ &::before {
       color: @yellow;
@@ -244,7 +238,8 @@
     width: 100%;
     max-height: 400px;
     object-fit: contain;
-    
+    vertical-align: top;
+
     padding: 0.64em;
   }
 

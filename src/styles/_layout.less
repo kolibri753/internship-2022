@@ -63,10 +63,6 @@
 
   &__list {
     height: 100%;
-
-    .responsive(@lg; {
-      padding: 0em 1em 0 0;
-    });
   }
 }
 
@@ -74,21 +70,31 @@
   .wrapper();
 
   &__inner {
+    min-height: 550px;
     padding: 1.43em 1.43em 0 1.43em;
-    background: url(../img/pagination-mobile.svg) #f5f7fb no-repeat left bottom;
+    background: url(../img/pagination-mobile.svg) @light-gray no-repeat left
+      bottom;
 
     .responsive(@lg; {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      background: url(../img/pagination-desktop.svg) #f5f7fb no-repeat 1.43em bottom;
+      background: url(../img/pagination-desktop.svg) @light-gray no-repeat 1.43em bottom;
+    });
+
+    .responsive(@xxxl; {
+      background-position: 7em bottom;
     });
   }
 
   &__info {
     .responsive(@lg; {
       font-size: 16px;
+    });
+
+    .responsive(@xxxl; {
+      margin-left: 5em;
     });
   }
 
@@ -122,9 +128,12 @@
     width: 100%;
     display: block;
     object-fit: cover;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 
     .responsive(@lg; {
-      max-width: 700px;
+      align-self: flex-end;
     });
   }
 }
@@ -159,9 +168,6 @@
     font-size: 16px;
     font-weight: 700;
   }
-
-  &__text {
-  }
 }
 
 .gallery {
@@ -191,67 +197,6 @@
   }
 }
 
-#banner--discount {
-  background: url(../img/backgrounds/discount-bg.png) rgba(#291762, 0.7)
-    no-repeat center right;
-  background-size: contain;
-
-  &:hover {
-    background-color: @violet;
-  }
-
-  .responsive(@lg; {
-    grid-row: 1 / 3;
-    background-image: url(../img/backgrounds/discount-bg-desktop.png);
-    border-radius: 0 0 5em 0;
-    transform: scaleX(-1);
-    width: 100%;
-    height: 100%;
-
-    .banner__title {
-      transform: scaleX(-1);
-    }
-  });
-}
-
-#banner--for-men {
-  background: url(../img/backgrounds/for-men-bg.png) rgba(@dark-blue, 0.7) no-repeat;
-  background-size: contain;
-
-  &:hover {
-    background-color: @dirty-blue;
-  }
-
-  .responsive(@lg; {
-    border-radius: 0 5em 0 0;
-    background-position: center left 3em;
-
-    .banner__title {
-      font-size: 50px;
-      line-height: 60px;
-    }
-  });
-}
-
-#banner--dress-collection {
-  background: url(../img/backgrounds/dresses-collection-bg.png)
-    rgba(#4e2752, 0.7) no-repeat center right;
-  background-size: contain;
-
-  &:hover {
-    background-color: @pink;
-  }
-
-  .responsive(@lg; {
-    border-radius: 0;
-
-    .banner__title {
-      font-size: 50px;
-      line-height: 60px;
-    }
-  });
-}
-
 .banner {
   width: 100%;
   min-height: 16em;
@@ -269,23 +214,12 @@
     background-size: contain;
   });
 
-  &:nth-child(2n + 1) {
-    border-radius: 0 5em 0 5em;
-    background-position: center right;
-  }
-
-  &:nth-child(2n + 2) {
-    border-radius: 5em 0 5em 0;
-    background-position: center left;
-    justify-content: flex-end;
-  }
-
   &__title {
     text-transform: uppercase;
     color: @white;
     max-width: 9em;
-    
-    & > span{
+
+    & > span {
       white-space: nowrap;
       display: block;
       color: @yellow;
@@ -302,6 +236,86 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   });
+
+  &__banner {
+    &--discount {
+      background: url(../img/backgrounds/discount-bg.png) rgba(#291762, 0.7)
+        no-repeat center right;
+      background-size: contain;
+
+      &:hover {
+        background-color: @violet;
+      }
+
+      .responsive(@xs; {
+        border-radius: 0 5em 0 5em;
+        background-position: center right;
+      });
+
+      .responsive(@lg; {
+        grid-row: 1 / 3;
+        background-image: url(../img/backgrounds/discount-bg-desktop.png);
+        border-radius: 0 0 5em 0;
+        transform: scaleX(-1);
+        width: 100%;
+        height: 100%;
+    
+        .banner__title {
+          transform: scaleX(-1);
+        }
+      });
+    }
+
+    &--for-men {
+      background: url(../img/backgrounds/for-men-bg.png) rgba(@dark-blue, 0.7)
+        no-repeat;
+      background-size: contain;
+
+      &:hover {
+        background-color: @dirty-blue;
+      }
+
+      .responsive(@xs; {
+        border-radius: 5em 0 5em 0;
+        background-position: center left;
+        justify-content: flex-end;
+      });
+
+      .responsive(@lg; {
+        border-radius: 0 5em 0 0;
+        background-position: center left 3em;
+    
+        .banner__title {
+          font-size: 50px;
+          line-height: 60px;
+        }
+      });
+    }
+
+    &--dress-collection {
+      background: url(../img/backgrounds/dresses-collection-bg.png)
+        rgba(#4e2752, 0.7) no-repeat center right;
+      background-size: contain;
+
+      &:hover {
+        background-color: @pink;
+      }
+
+      .responsive(@xs; {
+        border-radius: 0 5em 0 5em;
+        background-position: center right;
+      });
+
+      .responsive(@lg; {
+        border-radius: 0;
+    
+        .banner__title {
+          font-size: 50px;
+          line-height: 60px;
+        }
+      });
+    }
+  }
 }
 
 .form {
