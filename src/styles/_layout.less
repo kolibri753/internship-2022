@@ -26,9 +26,6 @@
     grid-column: 2/-1;
     justify-self: end;
 
-    .responsive(@lg; {
-    display: block;
-    
     &::before {
       content: "";
       position: absolute;
@@ -37,8 +34,11 @@
       border-bottom: 1px solid @gray;
       width: 100%;
       display: block;
-    } 
-  });
+    }
+
+    .responsive(@lg; {
+      display: block; 
+    });
   }
 
   &__burger {
@@ -48,9 +48,6 @@
     .responsive(@lg; {
       display: none;
     });
-  }
-
-  &__logo {
   }
 
   &__menu {
@@ -70,13 +67,14 @@
   .wrapper();
 
   &__inner {
+    display: flex;
+    flex-direction: column;
     min-height: 550px;
     padding: 1.43em 1.43em 0 1.43em;
-    background: url(../img/pagination-mobile.svg) @light-gray no-repeat left
-      bottom;
+    background: url(../img/pagination-mobile.svg) @light-gray no-repeat left bottom;
 
     .responsive(@lg; {
-      display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: space-between;
 
@@ -125,15 +123,20 @@
   }
 
   &__img {
-    width: 100%;
     display: block;
-    object-fit: cover;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    // width: 80%;
+    height: 290px;
+    width: 200px;
+    object-fit: contain;
+    align-self: center;
+    background: url(../img/backgrounds/circle-bg.png) no-repeat center center;
+    background-size: cover;
 
     .responsive(@lg; {
       align-self: flex-end;
+      // max-width: 500px;
+      height: 500px;
+      width: 500px;
     });
   }
 }
@@ -156,8 +159,15 @@
   }
 
   &__icon {
-    height: 7.5em;
-    object-fit: contain;
+    height: 5.5em;
+    width: 5.5em;
+    margin-right: 1em;
+    object-fit: cover;
+
+    .responsive(@lg; {
+      height: 7em;
+      width: 7em;
+    });
   }
 
   &__description {
@@ -181,10 +191,11 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 120px);
 
     .responsive(@lg; {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, 320px);
     });
   }
 

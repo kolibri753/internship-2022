@@ -45,6 +45,15 @@
   });
 }
 
+.logo {
+  
+  &__icon {
+    width: 143px;
+    height: 43px;
+    object-fit: contain;
+  }
+}
+
 .menu {
   display: flex;
   justify-content: center;
@@ -60,7 +69,7 @@
   }
 
   &__link {
-    padding: 1.07em 0em 2.07em 0em;
+    padding: 1.07em 0 2.07em;
 
     &:focus {
       border-bottom: 3px solid @blue;
@@ -76,10 +85,18 @@
 
   &__item {
     height: 100%;
-    
+
     &:nth-child(1),
     &:nth-child(2) {
       margin-right: 1em;
+    }
+
+    &--desktop {
+      display: none;
+
+      .responsive(@lg; {
+        display: block;
+      });
     }
   }
 
@@ -99,8 +116,8 @@
         font-weight: 500;
         color: @white;
         position: absolute;
-        top: 5px;
-        right: 1px;
+        top: 6px;
+        right: 0;
         width: 1.25rem;
         height: 1.25rem;
         background-color: @blue;
@@ -108,11 +125,19 @@
       }
     }
   }
+
+  &__icon {
+    width: 1.25em;
+    height: 1.25em;
+    object-fit: cover;
+  }
 }
 
 .socials {
   display: inline-flex;
   gap: 2em;
+  width: 1em;
+  height: 1em;
 
   &__icon {
     .responsive(@lg; {
@@ -235,12 +260,16 @@
   }
 
   &__img {
-    width: 100%;
-    max-height: 400px;
+    height: 120px;
+    width: 120px;
     object-fit: contain;
     vertical-align: top;
-
     padding: 0.64em;
+
+    .responsive(@lg; {
+      height: 320px;
+      width: 320px;
+    });
   }
 
   &__title {
