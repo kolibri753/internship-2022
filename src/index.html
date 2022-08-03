@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A to-do list app lets you write, organize, and reprioritize your tasks more efficiently."
+    />
+    <title>ToDo-jQuery</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/b983d82776.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="js/main.min.js" defer></script>
+  </head>
+  <body>
+    <main class="main">
+
+      <form class="main__form form" action="#" method="get">
+        <input
+          class="form__input"
+          type="text"
+          placeholder="Write down your todo..."
+        />
+        <button class="form__submit btn" type="submit" aria-label="submit-task">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </form>
+
+      <ul class="main__list list">
+      </ul>
+    </main>
+  </body>
+</html>
