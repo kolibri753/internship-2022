@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./styles/style.scss";
+import Form from "./components/Form";
+import List from "./components/List";
 
 function App() {
+  const [inputText, setInputText] = useState("");
+  const [tasks, addTask] = useState([]);
+
+  useEffect(() => {   
+    loadFromLocalStorage();
+  }, []);
+
+  useEffect(() => {
+    saveToLocalStorage();
+  }, [tasks]);
+
+  const saveToLocalStorage = () => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  };
+
+  const loadFromLocalStorage = () => {
+    if (localStorage.getItem("tasks") === null) {
+      localStorage.setItem("tasks", JSON.stringify([]));
+    } else {
+      const localList = JSON.parse(localStorage.getItem("tasks"));
+      addTask(localList);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="main">
+      <Form
+        setInputText={setInputText}
+        inputText={inputText}
+        tasks={tasks}
+        addTask={addTask}
+      />
+      <List tasks={tasks} addTask={addTask} />
+    </main>
   );
 }
 
