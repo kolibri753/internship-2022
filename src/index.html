@@ -83,32 +83,70 @@
       </nav>
       <ul class="header__list list">
         <li class="list__item">
-          <button class="list__btn">
-            <i class="zmdi zmdi-account"></i>
-          </button>
-        </li>
-        <li class="list__item">
-          <button class="list__btn">
+          <button class="list__btn" aria-label="search">
             <i class="zmdi zmdi-search"></i>
           </button>
         </li>
+        <li class="list__item">
+          <button
+            class="list__btn"
+            aria-label="account"
+            id="list__btn--account"
+          >
+            <i class="zmdi zmdi-account"></i>
+          </button>
+          <div class="submenu"></div>
+        </li>
         <li class="list__item list__item--desktop">
-          <button class="list__btn list__btn--amount">
+          <button class="list__btn list__btn--amount" aria-label="swap">
             <i class="zmdi zmdi-swap"></i>
           </button>
         </li>
         <li class="list__item list__item--desktop">
-          <button class="list__btn list__btn--amount">
+          <button class="list__btn list__btn--amount" aria-label="favorite">
             <i class="zmdi zmdi-favorite"></i>
           </button>
         </li>
         <li class="list__item list__item--desktop">
-          <button class="list__btn list__btn--amount">
+          <button
+            class="list__btn list__btn--amount"
+            id="shopping-cart"
+            aria-label="shopping-basket"
+          >
             <i class="zmdi zmdi-shopping-basket"></i>
           </button>
         </li>
       </ul>
     </header>
+
+    <!-- #region average modal -->
+    <div class="modal-overlay">
+      <div class="modal">
+        <button class="modal__btn-close" aria-label="close modal-window">
+          <i class="zmdi zmdi-close"></i>
+        </button>
+        <h2 class="modal__title section-title"></h2>
+        <div class="modal__text"></div>
+
+        <!-- <section class="cart">
+          <div class="product">
+            <img class="product__img" src="" alt="img" />
+            <div class="product__info">
+              <a class="product__title"></a>
+              <p class="product__text"></p>
+              <span class="product__color"> </span>
+              <span class="product__size"> </span>
+            </div>
+            <div class="product__amount"></div>
+            <span class="product__price"></span>
+            <button class="product__delete" id="delete-product">
+              <i class="zmdi zmdi-delete"></i>
+            </button>
+          </div>
+        </section> -->
+      </div>
+    </div>
+    <!-- #endregion -->
 
     <section class="hero">
       <div class="hero__inner">
@@ -123,11 +161,31 @@
           </p>
           <button class="hero__btn btn">shop now</button>
         </div>
-        <img
-          class="hero__img"
-          src="img/backgrounds/hero-girl-1.png"
-          alt="hero-img"
-        />
+
+        <div class="hero__slider slider">
+          <div class="slider__line">
+            <img
+              class="slider__img"
+              src="img/backgrounds/hero-girl-1.png"
+              alt="hero-img"
+            />
+            <img
+              class="slider__img"
+              src="img/backgrounds/hero-girl-2.png"
+              alt="hero-img"
+            />
+            <img
+              class="slider__img"
+              src="img/backgrounds/hero-girl-3.png"
+              alt="hero-img"
+            />
+            <img
+              class="slider__img"
+              src="img/backgrounds/hero-boy-1.png"
+              alt="hero-img"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -188,16 +246,49 @@
             src="img/products/radiant-tee.jpg"
             alt="radiant-tee"
           />
-          <h5 class="product__title">Radiant Tee</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <div class="product__color-wrapper"></div>
+
+            <label
+              class="product__color product__color--gray product__color--index0"
+              for="btn-pr1--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr1--1"
+              name="btn-pr1"
+            />
+            <label
+              class="product__color product__color--black product__color--index1"
+              for="btn-pr1--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr1--2"
+              name="btn-pr1"
+            />
+
+            <h5 class="product__title">Radiant Tee</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">0 Reviews</span>
+            <span class="product__price">€32</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">0 Reviews</span>
-          <span class="product__price">€32</span>
         </div>
 
         <div class="gallery__product product product--top">
@@ -206,16 +297,66 @@
             src="img/products/mona-pullover-hoodie.jpg"
             alt="mona-pullover-hoodie"
           />
-          <h5 class="product__title">Mona Pullover Hoodlie</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <label
+              class="product__color product__color--black product__color--index0"
+              for="btn-pr2--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr2--1"
+              name="btn-pr2"
+            />
+            <label
+              class="product__color product__color--gray product__color--index1"
+              for="btn-pr2--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr2--2"
+              name="btn-pr2"
+            />
+            <label
+              class="product__color product__color--dirty-blue product__color--index2"
+              for="btn-pr2--3"
+            ></label>
+            <input
+              class="product__color--input product__color--index2"
+              type="radio"
+              id="btn-pr2--3"
+              name="btn-pr2"
+            />
+            <label
+              class="product__color product__color--red product__color--index3"
+              for="btn-pr2--4"
+            ></label>
+            <input
+              class="product__color--input product__color--index3"
+              type="radio"
+              id="btn-pr2--4"
+              name="btn-pr2"
+            />
+            <h5 class="product__title">Mona Pullover Hoodlie</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">83 Reviews</span>
+            <span class="product__price">€54</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">83 Reviews</span>
-          <span class="product__price">€54</span>
         </div>
 
         <div class="gallery__product product product--discount">
@@ -224,16 +365,46 @@
             src="img/products/hero-hoodie.jpg"
             alt="hero-hoodie"
           />
-          <h5 class="product__title">Hero Hoodie</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <label
+              class="product__color product__color--dirty-blue product__color--index0"
+              for="btn-pr3--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr3--1"
+              name="btn-pr3"
+            />
+            <label
+              class="product__color product__color--red product__color--index1"
+              for="btn-pr3--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr3--2"
+              name="btn-pr3"
+            />
+            <h5 class="product__title">Hero Hoodie</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">34 Reviews</span>
+            <span class="product__price product__price--new">€59</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">34 Reviews</span>
-          <span class="product__price product__price--new">€59</span>
         </div>
 
         <div class="gallery__product product">
@@ -242,16 +413,46 @@
             src="img/products/circle-hooded-ice-fleecce.jpg"
             alt="circle-hooded-ice-fleecce"
           />
-          <h5 class="product__title">Circe Hooded Ice Fleece</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <label
+              class="product__color product__color--black product__color--index0"
+              for="btn-pr4--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr4--1"
+              name="btn-pr4"
+            />
+            <label
+              class="product__color product__color--red product__color--index1"
+              for="btn-pr4--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr4--2"
+              name="btn-pr4"
+            />
+            <h5 class="product__title">Circe Hooded Ice Fleece</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">55 Reviews</span>
+            <span class="product__price">€55</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">55 Reviews</span>
-          <span class="product__price">€55</span>
         </div>
       </div>
       <button class="gallery__btn btn">all goods</button>
@@ -280,6 +481,7 @@
       <span class="gallery__text"
         >Here is what`s trending on Luma right now</span
       >
+
       <div class="gallery__wrapper">
         <div class="gallery__product product product--new">
           <img
@@ -287,136 +489,428 @@
             src="img/products/radiant-tee.jpg"
             alt="radiant-tee"
           />
-          <h5 class="product__title">Radiant Tee</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <div class="product__color-wrapper"></div>
+
+            <label
+              class="product__color product__color--gray product__color--index0"
+              for="btn-pr1--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr1--1"
+              name="btn-pr1"
+            />
+            <label
+              class="product__color product__color--black product__color--index1"
+              for="btn-pr1--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr1--2"
+              name="btn-pr1"
+            />
+
+            <h5 class="product__title">Radiant Tee</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">0 Reviews</span>
+            <span class="product__price">€32</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">0 Reviews</span>
-          <span class="product__price">€32</span>
         </div>
+
         <div class="gallery__product product product--top">
           <img
             class="product__img"
             src="img/products/mona-pullover-hoodie.jpg"
             alt="mona-pullover-hoodie"
           />
-          <h5 class="product__title">Mona Pullover Hoodlie</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <label
+              class="product__color product__color--black product__color--index0"
+              for="btn-pr2--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr2--1"
+              name="btn-pr2"
+            />
+            <label
+              class="product__color product__color--gray product__color--index1"
+              for="btn-pr2--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr2--2"
+              name="btn-pr2"
+            />
+            <label
+              class="product__color product__color--dirty-blue product__color--index2"
+              for="btn-pr2--3"
+            ></label>
+            <input
+              class="product__color--input product__color--index2"
+              type="radio"
+              id="btn-pr2--3"
+              name="btn-pr2"
+            />
+            <label
+              class="product__color product__color--red product__color--index3"
+              for="btn-pr2--4"
+            ></label>
+            <input
+              class="product__color--input product__color--index3"
+              type="radio"
+              id="btn-pr2--4"
+              name="btn-pr2"
+            />
+            <h5 class="product__title">Mona Pullover Hoodlie</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">83 Reviews</span>
+            <span class="product__price">€54</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">83 Reviews</span>
-          <span class="product__price">€54</span>
         </div>
+
         <div class="gallery__product product product--discount">
           <img
             class="product__img"
             src="img/products/hero-hoodie.jpg"
             alt="hero-hoodie"
           />
-          <h5 class="product__title">Hero Hoodie</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <label
+              class="product__color product__color--dirty-blue product__color--index0"
+              for="btn-pr3--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr3--1"
+              name="btn-pr3"
+            />
+            <label
+              class="product__color product__color--red product__color--index1"
+              for="btn-pr3--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr3--2"
+              name="btn-pr3"
+            />
+            <h5 class="product__title">Hero Hoodie</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">34 Reviews</span>
+            <span class="product__price product__price--new">€59</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">34 Reviews</span>
-          <span class="product__price">€59 €32</span>
         </div>
+
         <div class="gallery__product product">
           <img
             class="product__img"
             src="img/products/circle-hooded-ice-fleecce.jpg"
             alt="circle-hooded-ice-fleecce"
           />
-          <h5 class="product__title">Circe Hooded Ice Fleece</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <label
+              class="product__color product__color--black product__color--index0"
+              for="btn-pr4--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr4--1"
+              name="btn-pr4"
+            />
+            <label
+              class="product__color product__color--red product__color--index1"
+              for="btn-pr4--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr4--2"
+              name="btn-pr4"
+            />
+            <h5 class="product__title">Circe Hooded Ice Fleece</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">55 Reviews</span>
+            <span class="product__price">€55</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">55 Reviews</span>
-          <span class="product__price">€55</span>
         </div>
+
         <div class="gallery__product product product--discount">
           <img
             class="product__img"
             src="img/products/hero-hoodie.jpg"
             alt="hero-hoodie"
           />
-          <h5 class="product__title">Hero Hoodie</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <label
+              class="product__color product__color--dirty-blue product__color--index0"
+              for="btn-pr3--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr3--1"
+              name="btn-pr3"
+            />
+            <label
+              class="product__color product__color--red product__color--index1"
+              for="btn-pr3--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr3--2"
+              name="btn-pr3"
+            />
+            <h5 class="product__title">Hero Hoodie</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">34 Reviews</span>
+            <span class="product__price product__price--new">€59</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">34 Reviews</span>
-          <span class="product__price">€59 €32</span>
         </div>
+
         <div class="gallery__product product">
           <img
             class="product__img"
             src="img/products/circle-hooded-ice-fleecce.jpg"
             alt="circle-hooded-ice-fleecce"
           />
-          <h5 class="product__title">Circe Hooded Ice Fleece</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <label
+              class="product__color product__color--black product__color--index0"
+              for="btn-pr4--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr4--1"
+              name="btn-pr4"
+            />
+            <label
+              class="product__color product__color--red product__color--index1"
+              for="btn-pr4--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr4--2"
+              name="btn-pr4"
+            />
+            <h5 class="product__title">Circe Hooded Ice Fleece</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">55 Reviews</span>
+            <span class="product__price">€55</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">55 Reviews</span>
-          <span class="product__price">€55</span>
         </div>
+
         <div class="gallery__product product product--new">
           <img
             class="product__img"
             src="img/products/radiant-tee.jpg"
             alt="radiant-tee"
           />
-          <h5 class="product__title">Radiant Tee</h5>
+          <div class="product__info">
+            <div class="product__color-wrapper"></div>
 
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+            <label
+              class="product__color product__color--gray product__color--index0"
+              for="btn-pr1--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr1--1"
+              name="btn-pr1"
+            />
+            <label
+              class="product__color product__color--black product__color--index1"
+              for="btn-pr1--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr1--2"
+              name="btn-pr1"
+            />
+
+            <h5 class="product__title">Radiant Tee</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">0 Reviews</span>
+            <span class="product__price">€32</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">0 Reviews</span>
-          <span class="product__price">€32</span>
         </div>
+
         <div class="gallery__product product product--top">
           <img
             class="product__img"
             src="img/products/mona-pullover-hoodie.jpg"
             alt="mona-pullover-hoodie"
           />
-          <h5 class="product__title">Mona Pullover Hoodlie</h5>
-          <div class="product__stars rating">
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
-            <i class="rating__icon zmdi zmdi-star"></i>
+          <div class="product__info">
+            <label
+              class="product__color product__color--black product__color--index0"
+              for="btn-pr2--1"
+            ></label>
+            <input
+              class="product__color--input product__color--index0"
+              type="radio"
+              id="btn-pr2--1"
+              name="btn-pr2"
+            />
+            <label
+              class="product__color product__color--gray product__color--index1"
+              for="btn-pr2--2"
+            ></label>
+            <input
+              class="product__color--input product__color--index1"
+              type="radio"
+              id="btn-pr2--2"
+              name="btn-pr2"
+            />
+            <label
+              class="product__color product__color--dirty-blue product__color--index2"
+              for="btn-pr2--3"
+            ></label>
+            <input
+              class="product__color--input product__color--index2"
+              type="radio"
+              id="btn-pr2--3"
+              name="btn-pr2"
+            />
+            <label
+              class="product__color product__color--red product__color--index3"
+              for="btn-pr2--4"
+            ></label>
+            <input
+              class="product__color--input product__color--index3"
+              type="radio"
+              id="btn-pr2--4"
+              name="btn-pr2"
+            />
+            <h5 class="product__title">Mona Pullover Hoodlie</h5>
+            <div class="product__stars rating">
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+              <i class="rating__icon zmdi zmdi-star"></i>
+            </div>
+            <span class="product__reviews">83 Reviews</span>
+            <span class="product__price">€54</span>
+            <div class="product__buttons">
+              <button class="product__btn btn" id="buy-now">Buy now</button>
+              <button
+                class="product__favorite"
+                id="favorite"
+                aria-label="add to favotite"
+              ></button>
+            </div>
           </div>
-          <span class="product__reviews">83 Reviews</span>
-          <span class="product__price">€54</span>
         </div>
       </div>
       <button class="gallery__btn btn">all goods</button>
@@ -425,7 +919,7 @@
     <section class="subscribe">
       <div class="subscribe__info">
         <h3 class="subscribe__title section-title">
-          <span>Subscribe</span>for our newsletter
+          <span>Subscribe </span>for our newsletter
         </h3>
         <p class="subscribe__text">
           Subscribe to the email newsletter and stay up to date with all our
@@ -433,8 +927,13 @@
         </p>
       </div>
       <form class="subscribe__form form" action="#">
+        <label
+          class="form__label form__label--sub-email"
+          for="sub-email"
+        ></label>
         <input
           class="form__textbox"
+          id="sub-email"
           type="email"
           placeholder="Enter your e-mail"
         />
@@ -449,7 +948,9 @@
             <a href="#">Privacy policy</a>
           </label>
         </div>
-        <button type="submit" class="form__btn btn">Subscribe</button>
+        <button type="submit" class="form__btn btn" id="btnSubscribe">
+          Subscribe
+        </button>
       </form>
     </section>
 
