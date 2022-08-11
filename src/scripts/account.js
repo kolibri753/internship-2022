@@ -39,9 +39,8 @@ function modalCreateAccount() {
   }
   const bgImage = document.createElement("div");
   bgImage.classList.add("bgImage");
-  modal.style.height = "550px";
-  bgImage.style.height = "550px";
-  // bgImage.style.height = modal.offsetHeight + "px";
+  modal.style.height = "600px";
+  bgImage.style.height = "600px";
 
   modalWindow.appendChild(bgImage);
 
@@ -74,7 +73,7 @@ function modalCreateAccount() {
   );
   const confirmPasswordEyeIcon = createPasswordEyeIcon(confirmPasswordInput);
   confirmPasswordLabel.appendChild(confirmPasswordEyeIcon);
-  
+
   const formAgreement = createCheckbox();
   const btnForm = createFormBtn("Create", "btnCreateAccount");
   btnForm.addEventListener("click", accountCreateFormValidation);
@@ -143,7 +142,7 @@ function accountCreateFormValidation() {
   if (formInputPassword.classList.contains("form__input--incorrect")) {
     const eyes = document.querySelectorAll(".password-container");
 
-    eyes.forEach(eye => {
+    eyes.forEach((eye) => {
       eye.style.right = "3em";
     });
   }
@@ -217,7 +216,7 @@ function modalSignIn() {
   const anchorCreateAcc = createAnchor("Create an Account", "anchorCreateAcc");
   anchorCreateAcc.addEventListener("click", function (e) {
     closeModalWindow();
-      openModalCreateAccount(e);
+    openModalCreateAccount(e);
   });
   textContainer.appendChild(anchorCreateAcc);
 
@@ -258,7 +257,7 @@ function signInFormValidation() {
   if (formInputPassword.classList.contains("form__input--incorrect")) {
     const eyes = document.querySelectorAll(".password-container");
 
-    eyes.forEach(eye => {
+    eyes.forEach((eye) => {
       eye.style.right = "3em";
     });
   }

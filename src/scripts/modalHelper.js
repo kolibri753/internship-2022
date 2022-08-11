@@ -10,6 +10,11 @@ function closeModalWindow() {
   const modalTextContainer = modal.querySelector(".modal__text-container");
   const productButtons = modal.querySelector(".product__buttons");
   const btnContinueShopping = modal.querySelector("#continue-shopping");
+  const btnCheckout = modal.querySelector("#checkout");
+
+  const shoppingCart = modal.querySelector(".cart");
+
+  shoppingCart.style.display = "none";
 
   if (modalForm !== null) {
     modalForm.remove();
@@ -31,17 +36,19 @@ function closeModalWindow() {
     btnContinueShopping.remove();
   }
 
+  if (btnCheckout !== null) {
+    btnCheckout.remove();
+  }
+
   modal.style.height = "initial";
   modalWindow.classList.remove("open-modal");
-  document.body.style.position = "";
   document.body.style.overflow = "auto";
 }
 
 function openModalWindow(e) {
   e.preventDefault();
   modalWindow.classList.add("open-modal");
-  // document.body.style.position = "fixed";
-  // document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
 }
 
 function createAnchor(textContent, id) {
@@ -69,14 +76,3 @@ function createBtn(textContent, id) {
 
   return btn;
 }
-
-// function createColorBtn(bgc, id) {
-//   const btnColor = document.createElement("button");
-//   btnColor.classList.add("product__color");
-//   btnColor.style.backgroundColor = bgc;
-//   btnColor.style.top = id * 2 + "em";
-//   btnColor.setAttribute("aria-label", `color-${bgc}`);
-//   btnColor.setAttribute("id", `btnColor${bgc}${id}`);
-
-//   return btnColor;
-// }
