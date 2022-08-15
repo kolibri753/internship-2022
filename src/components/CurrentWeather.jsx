@@ -1,15 +1,18 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDroplet,
+  faTemperatureHalf,
+  faWind,
+} from "@fortawesome/free-solid-svg-icons";
 
 function CurrentWeather({ units, data }) {
-
   const getDegreeFormat = () => (units === "imperial" ? "°F" : "°C");
   const getWindSpeedFormat = () => (units === "imperial" ? "m/h" : "m/s");
 
   const getTemp = (temp) =>
-    units === "imperial"
-      ? Math.round(temp)
-      : Math.round(((temp-32)*5)/9);
-  
+    units === "imperial" ? Math.round(temp) : Math.round(((temp - 32) * 5) / 9);
+
   return (
     <div className="weather">
       <div className="weather__top">
@@ -34,13 +37,16 @@ function CurrentWeather({ units, data }) {
         </h3>
         <div className="weather__info">
           <span className="weather__info-param">
+            <FontAwesomeIcon icon={faTemperatureHalf} className="icon" />
             Feels like: {getTemp(data.main.feels_like)}
             {getDegreeFormat()}
           </span>
           <span className="weather__info-param">
-            Humidity: {data.main.humidity}
+            <FontAwesomeIcon icon={faDroplet} className="icon" />
+            Humidity: {data.main.humidity}%
           </span>
           <span className="weather__info-param">
+            <FontAwesomeIcon icon={faWind} className="icon" />
             Wind speed: {data.wind.speed}
             {getWindSpeedFormat()}
           </span>
