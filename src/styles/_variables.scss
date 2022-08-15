@@ -1,0 +1,25 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+$lato: 'Lato', sans-serif;
+
+// Colors
+$white: #ffffff;
+$light-grey: #d8d8d8;
+$grey: #656565;
+$black: #000000;
+$red: #ff0000;
+$blue: #008cff;
+$light-blue: #97d0ff;
+$yellow: rgb(209, 197, 64);
+$light-yellow: rgb(255, 244, 215);
+$orange:  rgb(252, 164, 70);
+
+// Breakpoints
+$breakpoints: (
+  'xs':  ( max-width:  0px ),
+  'sm':  ( max-width:  576px ),
+  'md': ( max-width:  768px, ),
+  'lg':  ( max-width: 992px ),
+  'xl':  ( max-width: 1200px ),
+  'xxl':  ( max-width: 1400px )
+) !default;

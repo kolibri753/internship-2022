@@ -1,0 +1,269 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("../../public/img/purple-sky.png") no-repeat center center;
+  background-size: cover;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  &__text {
+    font-size: 2em;
+    @include m.text-outline(v.$white);
+
+    &--red {
+      color: v.$red;
+    }
+
+    &--blue {
+      color: v.$blue;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  &__checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    @include m.transition(all 5s ease-in-out);
+
+    &:checked {
+      & + .switch__icon::before {
+        transform: translateX(26px);
+        background-color: v.$blue;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: v.$light-grey;
+
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: v.$red;
+      border: 1px solid v.$black;
+
+      @include m.transition(all 0.3s ease-in-out);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 3em;
+  background-color: rgb(134, 117, 158);
+  @include m.container();
+
+  @include m.respond-to("sm") {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 3em;
+    line-height: 1em;
+    @include m.text-outline(v.$white);
+
+    @include m.respond-to("sm") {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.search {
+  width: 50%;
+  margin-bottom: 3em;
+
+  @include m.respond-to("xxl") {
+    width: 65%;
+  }
+
+  @include m.respond-to("lg") {
+    width: 80%;
+  }
+
+  @include m.respond-to("sm") {
+    width: 95%;
+  }
+}
+
+.weather {
+  @include m.container();
+  color: v.$white;
+  width: 50%;
+  border-radius: 1em;
+  background: radial-gradient(circle, v.$yellow 0%, v.$orange 100%);
+
+  @include m.respond-to("xxl") {
+    width: 65%;
+  }
+
+  @include m.respond-to("lg") {
+    width: 80%;
+  }
+
+  @include m.respond-to("sm") {
+    width: 95%;
+  }
+
+  &__top {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  &__city {
+    font-size: 2em;
+    word-wrap: break-word;
+  }
+
+  &__city-name {
+    margin-top: 0.1em;
+    font-size: 1.1em;
+
+    @include m.respond-to("sm") {
+      border-bottom: 2px solid v.$white;
+    }
+  }
+
+  &__city-code {
+    margin-left: 0.5em;
+  }
+
+  &__description {
+    margin-top: 0.5em;
+    font-size: 1.5em;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__center {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin-bottom: 1em;
+
+    @include m.respond-to("sm") {
+      grid-template-columns: repeat(auto-fit, 100%);
+      justify-items: center;
+    }
+  }
+
+  &__img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5em;
+    height: 4.5em;
+    background-color: v.$light-yellow;
+    border-radius: 50%;
+  }
+
+  &__img {
+    width: 4em;
+    height: 4em;
+    object-fit: contain;
+  }
+
+  &__temp {
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+
+    @include m.respond-to("sm") {
+      border-top: 2px solid v.$white;
+      width: 100%;
+    }
+  }
+
+  &__info-param {
+    text-align: right;
+    font-weight: 600;
+
+    @include m.respond-to("sm") {
+      text-align: center;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+  }
+
+  &__sun {
+    text-align: center;
+
+    & > span {
+
+      @include m.respond-to(sm) {
+       display: block;
+      }
+    }
+
+
+    & + & {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 1.5em;
+        width: 2px;
+        background-color: v.$white;
+
+        @include m.respond-to(sm) {
+          height: 3em;
+        }
+      }
+
+    }
+  }
+}
