@@ -5,6 +5,8 @@ const btnModalWindowClose = document.querySelector(".modal__btn-close");
 btnModalWindowClose.addEventListener("click", closeModalWindow);
 
 function closeModalWindow() {
+  window.removeEventListener("keydown", checkEscPress);
+
   const modalForm = modal.querySelector(".modal__form");
   const bgImage = modalWindow.querySelector(".bgImage");
   const modalTextContainer = modal.querySelector(".modal__text-container");
@@ -49,6 +51,15 @@ function openModalWindow(e) {
   e.preventDefault();
   modalWindow.classList.add("open-modal");
   document.body.style.overflow = "hidden";
+
+  window.addEventListener('keydown', checkEscPress);
+}
+
+function checkEscPress(e) {
+  let keyCode = e.keyCode;
+  if (keyCode === 27) {
+    closeModalWindow();
+  };
 }
 
 function createAnchor(textContent, id) {
