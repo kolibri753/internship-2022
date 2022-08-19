@@ -185,17 +185,21 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2, 145px);
+    grid-auto-rows: 310px;
 
     .responsive(@sm; {
       grid-template-columns: repeat(auto-fit, 210px);
+      grid-auto-rows: 365px;
     });
 
     .responsive(@md; {
       grid-template-columns: repeat(auto-fit, 250px);
+      grid-auto-rows: 420px;
     });
 
     .responsive(@lg; {
       grid-template-columns: repeat(auto-fit, 320px);
+      grid-auto-rows: 500px;
     });
   }
 
