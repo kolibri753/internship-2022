@@ -1,0 +1,16 @@
+<?
+
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+
+$nameStr = ($block->getNameInLayout());
+$nameStrArr = explode(".", $nameStr);
+$name = $nameStrArr[2];
+
+$text = $block->getData("text.${name}");
+?>
+
+<li class="menu__item">
+  <a href="#" class="menu__link"><?= $text; ?></a>
+</li>

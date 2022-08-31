@@ -1,0 +1,18 @@
+<?
+
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+
+$nameStr = ($block->getNameInLayout());
+$nameStrArr = explode(".", $nameStr);
+$name = $nameStrArr[2];
+
+$url = $block->getData("${name}.href");
+?>
+
+<li class="socials__item">
+    <a class="socials__link" aria-label="<?= $name; ?>" href="<?= $url; ?>" target="_blank">
+        <i class="socials__icon zmdi zmdi-<?= $name; ?>"></i>
+    </a>
+</li>

@@ -1,0 +1,80 @@
+@import "_variables.less";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+
+	&>li {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+figure,
+input {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+
+	&:visited {
+		color: inherit;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+#html-body,
+button,
+html {
+	font-family: @montserrat;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+button {
+	background-color: inherit;
+	border: 0;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+
+	// &:not(.primary) {
+	// 	box-shadow: none;
+
+	// 	&:active {
+	// 		box-shadow: none;
+	// 	}
+	// }
+}
+
+button,
+a {
+	.zmdi {
+		font-size: 1.5em;
+		pointer-events: none;
+	}
+}

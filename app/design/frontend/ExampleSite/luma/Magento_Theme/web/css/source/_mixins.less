@@ -1,0 +1,23 @@
+@import '_variables.less';
+
+.wrapper {
+  padding: 1.07rem;
+
+  .responsive(@xxl; {
+    padding: 1.07rem 12.86rem;
+   });
+}
+
+.responsive(@minWidth; @content) {
+  @media (min-width: @minWidth) {
+      @content();
+  }
+}
+
+.transition(@x; @x:some){
+  -webkit-transition: @x;
+  -moz-transition: @x;
+  -ms-transition: @x;
+  -o-transition: @x;
+  transition: @x;
+}

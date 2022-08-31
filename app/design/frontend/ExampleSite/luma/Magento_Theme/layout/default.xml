@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="header.panel.wrapper" remove="true" />
+        <referenceBlock name="page.main.title" remove="true" />
+        <referenceBlock name="header.content" remove="false"></referenceBlock>
+
+        <referenceContainer name="header-wrapper" htmlClass="header">
+            <referenceBlock name="top.search" remove="true" />
+            <referenceBlock name="minicart" remove="true" />
+            <referenceBlock name="catalog.compare.link" remove="true" />
+
+            <container name="header.socials" label="headerSocials" htmlTag="ul" htmlClass="header__socials socials">
+                <block class="Magento\Framework\View\Element\Template" name="header.socials.linkedin" as="linkedin" template="Magento_Theme::html/header/socialItem.phtml">
+                    <arguments>
+                        <argument name="linkedin.href" xsi:type="string">https://www.linkedin.com/</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="header.socials.facebook" as="facebook" template="Magento_Theme::html/header/socialItem.phtml">
+                    <arguments>
+                        <argument name="facebook.href" xsi:type="string">https://www.facebook.com/</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="header.socials.twitter" as="twitter" template="Magento_Theme::html/header/socialItem.phtml">
+                    <arguments>
+                        <argument name="twitter.href" xsi:type="string">https://twitter.com/</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="header.socials.instagram" as="instagram" template="Magento_Theme::html/header/socialItem.phtml">
+                    <arguments>
+                        <argument name="instagram.href" xsi:type="string">https://www.instagram.com/</argument>
+                    </arguments>
+                </block>
+            </container>
+
+            <container name="header.contact" label="headerContact" htmlTag="div" htmlClass="header__contact contact">
+                <block class="Magento\Framework\View\Element\Template" name="contact.text" as="contactContent" template="Magento_Theme::html/header/contactContent.phtml"></block>
+                <!-- <block class="Magento\Framework\View\Element\Template" name="store_language" as="store_language" template="Magento_Store::switch/languages.phtml"/> -->
+            </container>
+
+            <container name="header.menu.nav" label="headerMenu" htmlTag="nav" htmlClass="header__menu menu">
+                <container name="header.menu.ul" label="menuList" htmlTag="ul" htmlClass="menu">
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.home" as="home" template="Magento_Theme::html/header/menuItem.phtml">
+                        <arguments>
+                            <argument name="text.home" xsi:type="string">Home</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.catalog" as="catalog" template="Magento_Theme::html/header/menuItem.phtml">
+                        <arguments>
+                            <argument name="text.catalog" xsi:type="string">catalog</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.for-her" as="for-her" template="Magento_Theme::html/header/menuItem.phtml">
+                        <arguments>
+                            <argument name="text.for-her" xsi:type="string">for her</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.for-him" as="for-him" template="Magento_Theme::html/header/menuItem.phtml">
+                        <arguments>
+                            <argument name="text.for-him" xsi:type="string">for him</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.blog" as="blog" template="Magento_Theme::html/header/menuItem.phtml">
+                        <arguments>
+                            <argument name="text.blog" xsi:type="string">blog</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.about-us" as="about-us" template="Magento_Theme::html/header/menuItem.phtml">
+                        <arguments>
+                            <argument name="text.about-us" xsi:type="string">about us</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+
+            <container name="header.list" label="headerList" htmlTag="ul" htmlClass="header__list list">
+                <block class="Magento\Framework\View\Element\Template" name="header.list.search" as="search" template="Magento_Theme::html/header/listItemSearch.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="header.list.account" as="account" template="Magento_Theme::html/header/listItemAccount.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="header.list.swap" as="swap" template="Magento_Theme::html/header/listItemSwap.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="header.list.favorite" as="favorite" template="Magento_Theme::html/header/listItemFavorite.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="header.list.cart" as="cart" template="Magento_Theme::html/header/listItemCart.phtml" />
+            </container>
+
+        </referenceContainer>
+
+        <!-- <move element="header.socials" destination="header.container" as="header.socials" after="-" before="header.contact"/>
+        <move element="header.contact" destination="header.container" as="header.contact" after="header.socials" before="logo"/> -->
+
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
+                <argument name="logo_width" xsi:type="number">148</argument>
+                <argument name="logo_height" xsi:type="number">43</argument>
+                <argument name="logo_alt" xsi:type="string">Luma</argument>
+            </arguments>
+        </referenceBlock>
+
+        <move element="logo" destination="header-wrapper" as="logo" after="header.contact" before="header.menu.nav" />
+        <!-- <move element="top.search" destination="header.list" as="search" after="header.menu.nav" before="-" /> -->
+        <!-- <move element="minicart" destination="header.list" as="cart" after="header.list.favorite" /> -->
+
+    </body>
+</page>
