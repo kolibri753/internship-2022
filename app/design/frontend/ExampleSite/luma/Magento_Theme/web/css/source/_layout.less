@@ -76,7 +76,7 @@
     flex-direction: column;
     min-height: 550px;
     padding: 1.43em 1.43em 0 1.43em;
-    background: url('@{baseDir}Magento_Theme::images/features/pagination-mobile.svg') @light-gray no-repeat
+    background: url('@{baseDir}images/features/pagination-mobile.svg') @light-gray no-repeat
       left bottom;
 
     .responsive(@lg; {
@@ -84,7 +84,7 @@
       align-items: center;
       justify-content: space-between;
 
-      background: url('@{baseDir}Magento_Theme::images/features/pagination-mobile.svg') @light-gray no-repeat 1.43em bottom;
+      background: url('@{baseDir}images/features/pagination-desktop.svg') @light-gray no-repeat 1.43em bottom;
     });
 
     .responsive(@xxxl; {
@@ -488,8 +488,13 @@
   }
 }
 
+.page-footer {
+  padding: 0;
+}
+
 .footer {
   border-top: 1px solid @gray;
+  background-color: @white;
   position: relative;
 
   .responsive(@lg; {
@@ -585,23 +590,6 @@
 
     &:hover {
       color: @blue;
-    }
-  }
-
-  &__copyright {
-    display: block;
-    text-align: center;
-    background-color: @blue;
-    width: 100%;
-    padding: 1em 5em;
-    color: @white;
-
-    & > span {
-      display: inline-block;
-
-      & + span {
-        margin-left: 0.5em;
-      }
     }
   }
 }

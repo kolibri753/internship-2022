@@ -274,7 +274,7 @@
     width: 200px;
     object-fit: contain;
     object-position: bottom;
-    background: url(../images/backgrounds/circle-bg.png) no-repeat center center;
+    background: url('@{baseDir}images/backgrounds/circle-bg.png') no-repeat center center;
     background-size: cover;
 
     .responsive(@lg; {
@@ -969,4 +969,8 @@
   &__btn-buy {
     display: none;
   }
+}
+
+.copyright {
+  background-color: @blue;
 }

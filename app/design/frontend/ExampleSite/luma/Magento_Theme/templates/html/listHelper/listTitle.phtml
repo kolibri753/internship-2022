@@ -1,0 +1,14 @@
+<?
+
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+
+$nameStr = ($block->getNameInLayout());
+$nameStrArr = explode(".", $nameStr);
+$name = $nameStrArr[2];
+
+$text = $block->getData("text_${name}");
+?>
+
+<li class="footer__list-title"><?= $text; ?></li>

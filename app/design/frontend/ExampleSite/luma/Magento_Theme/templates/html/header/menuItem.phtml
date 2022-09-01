@@ -7,10 +7,18 @@ use Magento\Framework\View\Element\Template;
 $nameStr = ($block->getNameInLayout());
 $nameStrArr = explode(".", $nameStr);
 $name = $nameStrArr[2];
+$tag = $nameStrArr[0];
+$parent = "unknown";
+
+if ($tag === "header") {
+  $parent = "menu";
+} elseif ($tag === "footer") {
+  $parent = "footer";
+}
 
 $text = $block->getData("text_${name}");
 ?>
 
-<li class="menu__item">
-  <a href="#" class="menu__link"><?= $text; ?></a>
+<li class="<?= "${parent}__item"; ?>">
+  <a href="#" class="<?= "${parent}__link"; ?>"><?= $text; ?></a>
 </li>
