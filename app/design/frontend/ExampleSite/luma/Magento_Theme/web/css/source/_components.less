@@ -274,7 +274,7 @@
     width: 200px;
     object-fit: contain;
     object-position: bottom;
-    background: url(../img/backgrounds/circle-bg.png) no-repeat center center;
+    background: url(../images/backgrounds/circle-bg.png) no-repeat center center;
     background-size: cover;
 
     .responsive(@lg; {
@@ -580,7 +580,8 @@
   padding: 0;
   max-width: 100%;
 
-  &__icon {
+  &>img {
+    max-width: initial;
     width: 103px;
     height: 30px;
     object-fit: contain;
@@ -590,6 +591,15 @@
         height: 43px;
       });
   }
+}
+
+.nav-toggle {
+  position: static;
+  display: block;
+
+  .responsive(@lg; {
+      display: none;
+    });
 }
 
 .menu {

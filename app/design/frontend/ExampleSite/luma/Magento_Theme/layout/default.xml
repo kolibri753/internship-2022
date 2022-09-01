@@ -3,7 +3,6 @@
     <body>
         <referenceBlock name="header.panel.wrapper" remove="true" />
         <referenceBlock name="page.main.title" remove="true" />
-        <referenceBlock name="header.content" remove="false"></referenceBlock>
 
         <referenceContainer name="header-wrapper" htmlClass="header">
             <referenceBlock name="top.search" remove="true" />
@@ -13,22 +12,22 @@
             <container name="header.socials" label="headerSocials" htmlTag="ul" htmlClass="header__socials socials">
                 <block class="Magento\Framework\View\Element\Template" name="header.socials.linkedin" as="linkedin" template="Magento_Theme::html/header/socialItem.phtml">
                     <arguments>
-                        <argument name="linkedin.href" xsi:type="string">https://www.linkedin.com/</argument>
+                        <argument name="linkedin_href" xsi:type="string">https://www.linkedin.com/</argument>
                     </arguments>
                 </block>
                 <block class="Magento\Framework\View\Element\Template" name="header.socials.facebook" as="facebook" template="Magento_Theme::html/header/socialItem.phtml">
                     <arguments>
-                        <argument name="facebook.href" xsi:type="string">https://www.facebook.com/</argument>
+                        <argument name="facebook_href" xsi:type="string">https://www.facebook.com/</argument>
                     </arguments>
                 </block>
                 <block class="Magento\Framework\View\Element\Template" name="header.socials.twitter" as="twitter" template="Magento_Theme::html/header/socialItem.phtml">
                     <arguments>
-                        <argument name="twitter.href" xsi:type="string">https://twitter.com/</argument>
+                        <argument name="twitter_href" xsi:type="string">https://twitter.com/</argument>
                     </arguments>
                 </block>
                 <block class="Magento\Framework\View\Element\Template" name="header.socials.instagram" as="instagram" template="Magento_Theme::html/header/socialItem.phtml">
                     <arguments>
-                        <argument name="instagram.href" xsi:type="string">https://www.instagram.com/</argument>
+                        <argument name="instagram_href" xsi:type="string">https://www.instagram.com/</argument>
                     </arguments>
                 </block>
             </container>
@@ -42,32 +41,32 @@
                 <container name="header.menu.ul" label="menuList" htmlTag="ul" htmlClass="menu">
                     <block class="Magento\Framework\View\Element\Template" name="header.menu.home" as="home" template="Magento_Theme::html/header/menuItem.phtml">
                         <arguments>
-                            <argument name="text.home" xsi:type="string">Home</argument>
+                            <argument name="text_home" xsi:type="string">Home</argument>
                         </arguments>
                     </block>
                     <block class="Magento\Framework\View\Element\Template" name="header.menu.catalog" as="catalog" template="Magento_Theme::html/header/menuItem.phtml">
                         <arguments>
-                            <argument name="text.catalog" xsi:type="string">catalog</argument>
+                            <argument name="text_catalog" xsi:type="string">catalog</argument>
                         </arguments>
                     </block>
                     <block class="Magento\Framework\View\Element\Template" name="header.menu.for-her" as="for-her" template="Magento_Theme::html/header/menuItem.phtml">
                         <arguments>
-                            <argument name="text.for-her" xsi:type="string">for her</argument>
+                            <argument name="text_for-her" xsi:type="string">for her</argument>
                         </arguments>
                     </block>
                     <block class="Magento\Framework\View\Element\Template" name="header.menu.for-him" as="for-him" template="Magento_Theme::html/header/menuItem.phtml">
                         <arguments>
-                            <argument name="text.for-him" xsi:type="string">for him</argument>
+                            <argument name="text_for-him" xsi:type="string">for him</argument>
                         </arguments>
                     </block>
                     <block class="Magento\Framework\View\Element\Template" name="header.menu.blog" as="blog" template="Magento_Theme::html/header/menuItem.phtml">
                         <arguments>
-                            <argument name="text.blog" xsi:type="string">blog</argument>
+                            <argument name="text_blog" xsi:type="string">blog</argument>
                         </arguments>
                     </block>
                     <block class="Magento\Framework\View\Element\Template" name="header.menu.about-us" as="about-us" template="Magento_Theme::html/header/menuItem.phtml">
                         <arguments>
-                            <argument name="text.about-us" xsi:type="string">about us</argument>
+                            <argument name="text_about-us" xsi:type="string">about us</argument>
                         </arguments>
                     </block>
                 </container>
@@ -83,21 +82,71 @@
 
         </referenceContainer>
 
-        <!-- <move element="header.socials" destination="header.container" as="header.socials" after="-" before="header.contact"/>
-        <move element="header.contact" destination="header.container" as="header.contact" after="header.socials" before="logo"/> -->
-
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
-                <argument name="logo_width" xsi:type="number">148</argument>
-                <argument name="logo_height" xsi:type="number">43</argument>
                 <argument name="logo_alt" xsi:type="string">Luma</argument>
             </arguments>
         </referenceBlock>
 
         <move element="logo" destination="header-wrapper" as="logo" after="header.contact" before="header.menu.nav" />
+        <!-- <move element="header.socials" destination="header.container" as="header.socials" after="-" before="header.contact"/>
+        <move element="header.contact" destination="header.container" as="header.contact" after="header.socials" before="logo"/> -->
+
         <!-- <move element="top.search" destination="header.list" as="search" after="header.menu.nav" before="-" /> -->
         <!-- <move element="minicart" destination="header.list" as="cart" after="header.list.favorite" /> -->
+
+
+        <!-- HERO SECTION-->
+
+        <referenceContainer name="page.top">
+            <referenceBlock name="navigation.sections" remove="true" />
+
+            <container name="hero" label="hero" htmlTag="section" htmlClass="hero">
+                <container name="hero.inner" label="heroInner" htmlTag="div" htmlClass="hero__inner">
+                    <block class="Magento\Framework\View\Element\Template" name="hero.info" as="heroInfo" template="Magento_Theme::html/hero/info.phtml" />
+                    <block class="Magento\Framework\View\Element\Template" name="hero.slider" as="heroSlider" template="Magento_Theme::html/hero/slider.phtml" />
+                </container>
+            </container>
+
+            <container name="feature" label="feature" htmlTag="section" htmlClass="feature">
+                <block class="Magento\Framework\View\Element\Template" name="free-delivery" as="box-1" template="Magento_Theme::html/feature/feature.phtml">
+                    <arguments>
+                        <argument name="icon_free-delivery" xsi:type="string">images/features/free-delivery.svg</argument>
+                        <argument name="title_free-delivery" xsi:type="string">Free Delivery</argument>
+                        <argument name="text_free-delivery" xsi:type="string">For all order over €200</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="month-return" as="box-2" template="Magento_Theme::html/feature/feature.phtml">
+                    <arguments>
+                        <argument name="icon_month-return" xsi:type="string">images/features/month-return.svg</argument>
+                        <argument name="title_month-return" xsi:type="string">30 Days Return</argument>
+                        <argument name="text_month-return" xsi:type="string">If goods have problems</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="secure-payment" as="box-3" template="Magento_Theme::html/feature/feature.phtml">
+                    <arguments>
+                        <argument name="icon_secure-payment" xsi:type="string">images/features/secure-payment.svg</argument>
+                        <argument name="title_secure-payment" xsi:type="string">Secure Payment</argument>
+                        <argument name="text_secure-payment" xsi:type="string">Payment upon receipt after verification</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="daily-support" as="box-4" template="Magento_Theme::html/feature/feature.phtml">
+                    <arguments>
+                        <argument name="icon_daily-support" xsi:type="string">images/features/daily-support.svg</argument>
+                        <argument name="title_daily-support" xsi:type="string">24/7 Support</argument>
+                        <argument name="text_daily-support" xsi:type="string">Delicated support</argument>
+                    </arguments>
+                </block>
+            </container>
+
+        </referenceContainer>
+
+        
+        <!-- <move element="hero" destination="page.wrapper" as="hero" after="page-header" before="-" /> -->
+
+
+        <referenceContainer name="footer-container"></referenceContainer>
 
     </body>
 </page>
