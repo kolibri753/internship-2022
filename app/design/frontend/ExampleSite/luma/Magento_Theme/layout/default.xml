@@ -10,22 +10,22 @@
             <referenceBlock name="catalog.compare.link" remove="true" />
 
             <container name="header.socials" label="headerSocials" htmlTag="ul" htmlClass="header__socials socials">
-                <block class="Magento\Framework\View\Element\Template" name="header.socials.linkedin" as="linkedin" template="Magento_Theme::html/header/socialItem.phtml">
+                <block class="Magento\Framework\View\Element\Template" name="header.socials.linkedin" as="linkedin" template="Magento_Theme::html/helper/socialItem.phtml">
                     <arguments>
                         <argument name="linkedin_href" xsi:type="string">https://www.linkedin.com/</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Framework\View\Element\Template" name="header.socials.facebook" as="facebook" template="Magento_Theme::html/header/socialItem.phtml">
+                <block class="Magento\Framework\View\Element\Template" name="header.socials.facebook" as="facebook" template="Magento_Theme::html/helper/socialItem.phtml">
                     <arguments>
                         <argument name="facebook_href" xsi:type="string">https://www.facebook.com/</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Framework\View\Element\Template" name="header.socials.twitter" as="twitter" template="Magento_Theme::html/header/socialItem.phtml">
+                <block class="Magento\Framework\View\Element\Template" name="header.socials.twitter" as="twitter" template="Magento_Theme::html/helper/socialItem.phtml">
                     <arguments>
                         <argument name="twitter_href" xsi:type="string">https://twitter.com/</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Framework\View\Element\Template" name="header.socials.instagram" as="instagram" template="Magento_Theme::html/header/socialItem.phtml">
+                <block class="Magento\Framework\View\Element\Template" name="header.socials.instagram" as="instagram" template="Magento_Theme::html/helper/socialItem.phtml">
                     <arguments>
                         <argument name="instagram_href" xsi:type="string">https://www.instagram.com/</argument>
                     </arguments>
@@ -33,38 +33,38 @@
             </container>
 
             <container name="header.contact" label="headerContact" htmlTag="div" htmlClass="header__contact contact">
-                <block class="Magento\Framework\View\Element\Template" name="header.contact.text" as="contactContent" template="Magento_Theme::html/header/contactContent.phtml"></block>
+                <block class="Magento\Framework\View\Element\Template" name="header.contact.text" as="contactContent" template="Magento_Theme::html/helper/contactContent.phtml"></block>
                 <!-- <block class="Magento\Framework\View\Element\Template" name="store_language" as="store_language" template="Magento_Store::switch/languages.phtml"/> -->
             </container>
 
             <container name="header.menu.nav" label="headerMenu" htmlTag="nav" htmlClass="header__menu menu">
                 <container name="header.menu.list" label="menuList" htmlTag="ul" htmlClass="menu">
-                    <block class="Magento\Framework\View\Element\Template" name="header.menu.home" as="home" template="Magento_Theme::html/header/menuItem.phtml">
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.home" as="home" template="Magento_Theme::html/helper/menuItem.phtml">
                         <arguments>
                             <argument name="text_home" xsi:type="string">Home</argument>
                         </arguments>
                     </block>
-                    <block class="Magento\Framework\View\Element\Template" name="header.menu.catalog" as="catalog" template="Magento_Theme::html/header/menuItem.phtml">
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.catalog" as="catalog" template="Magento_Theme::html/helper/menuItem.phtml">
                         <arguments>
                             <argument name="text_catalog" xsi:type="string">catalog</argument>
                         </arguments>
                     </block>
-                    <block class="Magento\Framework\View\Element\Template" name="header.menu.for-her" as="for-her" template="Magento_Theme::html/header/menuItem.phtml">
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.for-her" as="for-her" template="Magento_Theme::html/helper/menuItem.phtml">
                         <arguments>
                             <argument name="text_for-her" xsi:type="string">for her</argument>
                         </arguments>
                     </block>
-                    <block class="Magento\Framework\View\Element\Template" name="header.menu.for-him" as="for-him" template="Magento_Theme::html/header/menuItem.phtml">
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.for-him" as="for-him" template="Magento_Theme::html/helper/menuItem.phtml">
                         <arguments>
                             <argument name="text_for-him" xsi:type="string">for him</argument>
                         </arguments>
                     </block>
-                    <block class="Magento\Framework\View\Element\Template" name="header.menu.blog" as="blog" template="Magento_Theme::html/header/menuItem.phtml">
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.blog" as="blog" template="Magento_Theme::html/helper/menuItem.phtml">
                         <arguments>
                             <argument name="text_blog" xsi:type="string">blog</argument>
                         </arguments>
                     </block>
-                    <block class="Magento\Framework\View\Element\Template" name="header.menu.about-us" as="about-us" template="Magento_Theme::html/header/menuItem.phtml">
+                    <block class="Magento\Framework\View\Element\Template" name="header.menu.about-us" as="about-us" template="Magento_Theme::html/helper/menuItem.phtml">
                         <arguments>
                             <argument name="text_about-us" xsi:type="string">about us</argument>
                         </arguments>
@@ -104,8 +104,8 @@
 
             <container name="hero" label="hero" htmlTag="section" htmlClass="hero">
                 <container name="hero.inner" label="heroInner" htmlTag="div" htmlClass="hero__inner">
-                    <block class="Magento\Framework\View\Element\Template" name="hero.info" as="heroInfo" template="Magento_Theme::html/hero/info.phtml" />
-                    <block class="Magento\Framework\View\Element\Template" name="hero.slider" as="heroSlider" template="Magento_Theme::html/hero/slider.phtml" />
+                    <!-- <block class="Magento\Framework\View\Element\Template" name="hero.info" as="heroInfo" template="Magento_Theme::html/hero/info.phtml" /> -->
+                    <!-- <block class="Magento\Framework\View\Element\Template" name="hero.slider" as="heroSlider" after="hero-info" template="Magento_Theme::html/hero/slider.phtml" /> -->
                 </container>
             </container>
 
@@ -147,6 +147,10 @@
         <!-- <referenceContainer name="page.bottom.container"></referenceContainer> -->
         <!-- <move element="form.subscribe" destination="page.bottom.container" as="subscribe" after="-" before="-" /> -->
 
+        <!-- <move element="subscribe" destination="page.bottom.container" as="subscribe" after="-" before="footer-container" /> -->
+
+        <!-- FOOTER-->
+
         <referenceContainer name="footer-container">
             <referenceBlock name="form.subscribe" remove="true" />
             <referenceBlock name="footer_links" remove="true"/>
@@ -155,22 +159,22 @@
                 <container name="footer.contacts" label="footerContacts" htmlTag="div" htmlClass="footer__contacts">
                     <block class="Magento\Theme\Block\Html\Header\Logo" name="logo.footer" />
                     <container name="footer.socials" label="footerSocials" htmlTag="ul" htmlClass="footer__socials socials">
-                        <block class="Magento\Framework\View\Element\Template" name="footer.socials.linkedin" as="linkedin" template="Magento_Theme::html/header/socialItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.socials.linkedin" as="linkedin" template="Magento_Theme::html/helper/socialItem.phtml">
                             <arguments>
                                 <argument name="linkedin_href" xsi:type="string">https://www.linkedin.com/</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.socials.facebook" as="facebook" template="Magento_Theme::html/header/socialItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.socials.facebook" as="facebook" template="Magento_Theme::html/helper/socialItem.phtml">
                             <arguments>
                                 <argument name="facebook_href" xsi:type="string">https://www.facebook.com/</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.socials.twitter" as="twitter" template="Magento_Theme::html/header/socialItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.socials.twitter" as="twitter" template="Magento_Theme::html/helper/socialItem.phtml">
                             <arguments>
                                 <argument name="twitter_href" xsi:type="string">https://twitter.com/</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.socials.instagram" as="instagram" template="Magento_Theme::html/header/socialItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.socials.instagram" as="instagram" template="Magento_Theme::html/helper/socialItem.phtml">
                             <arguments>
                                 <argument name="instagram_href" xsi:type="string">https://www.instagram.com/</argument>
                             </arguments>
@@ -178,38 +182,38 @@
                     </container>
 
                     <container name="footer.contact" label="footerContact" htmlTag="div" htmlClass="footer__contact contact">
-                        <block class="Magento\Framework\View\Element\Template" name="footer.contact.text" as="contactContent" template="Magento_Theme::html/header/contactContent.phtml"></block>
+                        <block class="Magento\Framework\View\Element\Template" name="footer.contact.text" as="contactContent" template="Magento_Theme::html/helper/contactContent.phtml"></block>
                     </container>
 
                 </container>
                 <container name="footer.lists-1" label="footerLists" htmlTag="div" htmlClass="footer__lists">
                     <container name="footer.list" label="footerList" htmlTag="ul" htmlClass="footer__list">
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.about-us-title" as="about-us-title" template="Magento_Theme::html/listHelper/listTitle.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.about-us-title" as="about-us-title" template="Magento_Theme::html/helper/listTitle.phtml">
                             <arguments>
                                 <argument name="text_about-us-title" xsi:type="string">About Us</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.about-us" as="about-us" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.about-us" as="about-us" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_about-us" xsi:type="string">About Us</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.delivery-and-returns" as="delivery-and-returns" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.delivery-and-returns" as="delivery-and-returns" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_delivery-and-returns" xsi:type="string">Delivery and Returns</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.our-brands" as="our-brands" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.our-brands" as="our-brands" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_our-brands" xsi:type="string">Our Brands</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.blog" as="blog" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.blog" as="blog" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_blog" xsi:type="string">Blog</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.news" as="news" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.news" as="news" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_news" xsi:type="string">News</argument>
                             </arguments>
@@ -217,27 +221,27 @@
                     </container>
 
                     <container name="footer.list-2" label="footerList" htmlTag="ul" htmlClass="footer__list">
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.product-range-title" as="product-range-title" template="Magento_Theme::html/listHelper/listTitle.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.product-range-title" as="product-range-title" template="Magento_Theme::html/helper/listTitle.phtml">
                             <arguments>
                                 <argument name="text_product-range-title" xsi:type="string">product range</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.for-him" as="for-him" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.for-him" as="for-him" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_for-him" xsi:type="string">For Him</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.for-her" as="for-her" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.for-her" as="for-her" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_for-her" xsi:type="string">For Her</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.for-kids" as="for-kids" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.for-kids" as="for-kids" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_for-kids" xsi:type="string">For kids</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.bags" as="bags" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.bags" as="bags" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_bags" xsi:type="string">Bags</argument>
                             </arguments>
@@ -245,27 +249,27 @@
                     </container>
 
                     <container name="footer.list-3" label="footerList" htmlTag="ul" htmlClass="footer__list">
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.lorem-ipsum-title" as="lorem-ipsum-title" template="Magento_Theme::html/listHelper/listTitle.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.lorem-ipsum-title" as="lorem-ipsum-title" template="Magento_Theme::html/helper/listTitle.phtml">
                             <arguments>
                                 <argument name="text_lorem-ipsum-title" xsi:type="string">lorem ipsum</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.dolor-sit" as="dolor-sit" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.dolor-sit" as="dolor-sit" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_dolor-sit" xsi:type="string">Dolor sit</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.consetetur" as="Ccnsetetur" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.consetetur" as="Ccnsetetur" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_consectetur" xsi:type="string">Consetetur</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.adipiscing-elit" as="adipiscing-elit" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.adipiscing-elit" as="adipiscing-elit" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_adipiscing-elit" xsi:type="string">Adipiscing elit</argument>
                             </arguments>
                         </block>
-                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.sit-amet" as="sit-amet" template="Magento_Theme::html/header/menuItem.phtml">
+                        <block class="Magento\Framework\View\Element\Template" name="footer.menu.sit-amet" as="sit-amet" template="Magento_Theme::html/helper/menuItem.phtml">
                             <arguments>
                                 <argument name="text_sit-amet" xsi:type="string">Sit amet</argument>
                             </arguments>

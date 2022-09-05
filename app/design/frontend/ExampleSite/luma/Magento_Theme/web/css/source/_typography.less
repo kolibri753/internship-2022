@@ -61,6 +61,19 @@ button {
 	cursor: pointer;
 	margin: 0;
 	padding: 0;
+
+	&:hover {
+		border: none;
+	}
+
+	&:active {
+		background-color: inherit;
+		border: none;
+	}
+	&:focus {
+		// background-color: inherit;
+		border: none;
+	}
 }
 
 button,
@@ -71,6 +84,26 @@ a {
 	}
 }
 
+img {
+	max-width: initial;
+}
+
 .page-main {
 	padding: 0;
+	margin: 0;
+	max-width: initial;
+}
+
+.page-wrapper>.page-bottom {
+	margin: 0;
+	padding: 0;
+	max-width: initial;
+}
+
+.block-static-block.widget {
+	margin-bottom: 0;
+}
+
+.copyright {
+	background-color: @blue;
 }

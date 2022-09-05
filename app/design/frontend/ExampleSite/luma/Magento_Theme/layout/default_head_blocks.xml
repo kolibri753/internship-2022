@@ -3,5 +3,7 @@
   <head>
     <link src="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" src_type="url" rel="stylesheet" />
     <link src="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" src_type="url" rel="stylesheet" />
+    <!-- <link src="Magento_Theme::js/slider.js"/> -->
+    <script type="text/javascript" defer="defer" src="Magento_Theme::js/slider.js"></script>
   </head>
 </page>

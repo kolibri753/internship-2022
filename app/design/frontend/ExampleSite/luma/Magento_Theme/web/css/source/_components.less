@@ -1,9 +1,9 @@
 @import "_variables.less";
 @import "_mixins.less";
 
-.burger {
-  background: url(../img/icons/burger.svg) no-repeat center center;
-}
+// .burger {
+//   background: url(../img/icons/burger.svg) no-repeat center center;
+// }
 
 .submenu {
   position: relative;
@@ -97,7 +97,7 @@
 .bgImage {
   .responsive(@md; {
       width: 20em;
-      background: url(../img/backgrounds/create-account-bg.jpg) no-repeat center center;
+      background: url(/media/wysiwyg/backgrounds/create-account-bg.jpg) no-repeat center center;
       background-size: cover;
     });
 }
@@ -261,11 +261,17 @@
 .slider {
   display: flex;
   overflow: hidden;
-  max-width: 35%;
+  max-width: 70%;
+
+  .responsive(@lg; {
+    max-width: 35%;
+  });
 
   &__line {
-    display: flex;
-    .transition(all 2s ease-in-out);
+    display: flex
+    
+    // -----------sliding effect----------
+    // .transition(all 2s ease-in-out);
   }
 
   &__img {
@@ -274,12 +280,13 @@
     width: 200px;
     object-fit: contain;
     object-position: bottom;
-    background: url('@{baseDir}images/backgrounds/circle-bg.png') no-repeat center center;
-    background-size: cover;
+    background: url('/media/wysiwyg/backgrounds/circle-bg.png') no-repeat center center;
+    background-size: contain;
 
     .responsive(@lg; {
         height: 500px;
         width: 600px;
+        background-size: cover;
       });
   }
 }
@@ -520,6 +527,7 @@
 
   &:hover {
     background: linear-gradient(to bottom right, @blue, @darker-blue);
+    color: @white;
   }
 
   .responsive(@lg; {
@@ -637,11 +645,6 @@
   &__item {
     height: 100%;
 
-    &:nth-child(1),
-    &:nth-child(2) {
-      margin-right: 1em;
-    }
-
     &--desktop {
       display: none;
 
@@ -654,10 +657,14 @@
   &__btn {
     height: 100%;
     padding-top: 1em;
+    padding-right: 1em;
+
+    &:hover {
+      background-color: @white;
+    }
 
     &--amount {
       position: relative;
-      padding-right: 1em;
 
       &::after {
         content: "3";
@@ -969,8 +976,4 @@
   &__btn-buy {
     display: none;
   }
-}
-
-.copyright {
-  background-color: @blue;
 }
