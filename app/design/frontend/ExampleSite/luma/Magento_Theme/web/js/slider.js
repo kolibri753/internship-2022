@@ -1,12 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  
   const images = document.querySelectorAll(".slider__img");
   const sliderLine = document.querySelector(".slider__line");
-  
   let count = 0;
   let width;
+  
+  if (images == null || sliderLine == null) {
+    return;
+  }
+  
   const widgetContainer = sliderLine.parentNode;
   widgetContainer.classList.add("hero__slider", "slider");
-
+  
   function init() {
     width = document.querySelector(".slider").offsetWidth;
     sliderLine.style.width = width * images.length + "px";

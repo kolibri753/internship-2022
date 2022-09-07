@@ -70,6 +70,7 @@ button {
 		background-color: inherit;
 		border: none;
 	}
+
 	&:focus {
 		// background-color: inherit;
 		border: none;
@@ -89,7 +90,8 @@ img {
 }
 
 .page-main {
-	padding: 0;
+	.wrapper();
+	// padding: 0;
 	margin: 0;
 	max-width: initial;
 }
@@ -106,4 +108,47 @@ img {
 
 .copyright {
 	background-color: @blue;
+}
+
+.footer .nav-toggle {
+	display: none;
+}
+
+.navigation {
+	background-color: @white;
+	border-bottom: 1px solid @gray;
+	display: flex;
+	padding: 0 1.07rem 0 1.07rem;
+	max-width: initial;
+
+	.responsive(@xxl; {
+		padding: 1.07rem 12.86rem;
+	});
+
+	ul {
+		padding: 0;
+	}
+}
+
+.ui-menu {
+	padding: 0;
+	display: flex;
+	// gap: 2em;
+
+	// .ui-menu-item-wrapper {
+	// 	padding: 0;
+	// 	border-color: @blue;
+	// }
+}
+
+.navigation .level0>.level-top {
+	padding: 0;
+}
+
+.navigation .level0.active > .level-top {
+	border-color: @blue;
+}
+
+.navigation .level0 {
+	margin-right: 2em;
 }

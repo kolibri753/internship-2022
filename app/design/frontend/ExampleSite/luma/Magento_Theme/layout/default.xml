@@ -96,8 +96,15 @@
         <!-- <move element="top.search" destination="header.list" as="search" after="header.menu.nav" before="-" /> -->
         <!-- <move element="minicart" destination="header.list" as="cart" after="header.list.favorite" /> -->
 
+        <!-- <referenceContainer name="navigation.sections">
+            <block class="Magento\Theme\Block\Html\Header\Logo" name="logo." />
+        </referenceContainer> -->
+        <!-- <move element="navigation.sections" destination="header-wrapper" as="header.menu.nav" after="logo" before="header.list"/> -->
+
 
         <!-- HERO SECTION-->
+
+
 
         <referenceContainer name="page.top">
             <referenceBlock name="navigation.sections" remove="true" />
@@ -153,6 +160,7 @@
 
         <referenceContainer name="footer-container">
             <referenceBlock name="form.subscribe" remove="true" />
+            <referenceBlock name="footer_links" remove="true"/>
             <referenceBlock name="footer_links" remove="true"/>
 
             <container name="footer.wrapper" label="footer" htmlTag="div" htmlClass="footer">
