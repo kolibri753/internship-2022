@@ -827,9 +827,13 @@
       });
   }
 
-  // .product-item-info {
-  //   max-width: initial;
-  // }
+  .product-item {
+    border: 1px solid @light-gray;
+  }
+
+  .maxWidth {
+    max-width: initial;
+  }
 
   // .product-image-photo,
   // &__img {
@@ -847,25 +851,25 @@
   // .product-image-photo,
   &__img {
     height: 145px;
-    width: 145px !important;
+    width: 145px;
     object-fit: contain;
     vertical-align: top;
     padding: 0.5em;
 
     .responsive(@sm; {
         height: 200px;
-        width: 200px !important;
+        width: 200px;
         padding: 1em;
       });
 
     .responsive(@md; {
         height: 250px;
-        width: 250px !important;
+        width: 250px;
       });
 
     .responsive(@lg; {
         height: 320px;
-        width: 320px !important;
+        width: 320px;
       });
   }
 
