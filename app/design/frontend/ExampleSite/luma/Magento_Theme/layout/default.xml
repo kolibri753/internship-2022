@@ -6,7 +6,6 @@
 
         <referenceContainer name="header-wrapper" htmlClass="header">
             <referenceBlock name="top.search" remove="true" />
-            <referenceBlock name="minicart" remove="true" />
             <referenceBlock name="catalog.compare.link" remove="true" />
 
             <container name="header.socials" label="headerSocials" htmlTag="ul" htmlClass="header__socials socials">
@@ -75,9 +74,8 @@
             <container name="header.list" label="headerList" htmlTag="ul" htmlClass="header__list list">
                 <block class="Magento\Framework\View\Element\Template" name="header.list.search" as="search" template="Magento_Theme::html/header/listItemSearch.phtml" />
                 <block class="Magento\Framework\View\Element\Template" name="header.list.account" as="account" template="Magento_Theme::html/header/listItemAccount.phtml" />
-                <block class="Magento\Framework\View\Element\Template" name="header.list.swap" as="swap" template="Magento_Theme::html/header/listItemSwap.phtml" />
-                <block class="Magento\Framework\View\Element\Template" name="header.list.favorite" as="favorite" template="Magento_Theme::html/header/listItemFavorite.phtml" />
-                <block class="Magento\Framework\View\Element\Template" name="header.list.cart" as="cart" template="Magento_Theme::html/header/listItemCart.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="header.list.compare" as="compare" template="Magento_Theme::html/header/listItemCompare.phtml" />
+                <block class="Magento\Wishlist\Block\Link" name="header.list.favorite" as="favorite" template="Magento_Theme::html/header/listItemFavorite.phtml" />
             </container>
 
         </referenceContainer>
@@ -93,8 +91,14 @@
         <!-- <move element="header.socials" destination="header.container" as="header.socials" after="-" before="header.contact"/>
         <move element="header.contact" destination="header.container" as="header.contact" after="header.socials" before="logo"/> -->
 
+        <!-- <move element="catalog.compare.link" destination="header.list" after="header.list.account" before="header.list.favorite"/> -->
+        <move element="minicart" destination="header.list" after="header.list.favorite"/>
+        <!-- <move element="catalog.compare.link" destination="header.list" after="header.list.account"/> -->
+
+
+        <!-- <move element="catalog.compare.link" destination="header.list" after="header.list.account"/>
+        <move element="wishlist_sidebar" destination="header.list" after="header.list.swap"/> -->
         <!-- <move element="top.search" destination="header.list" as="search" after="header.menu.nav" before="-" /> -->
-        <!-- <move element="minicart" destination="header.list" as="cart" after="header.list.favorite" /> -->
 
         <!-- <referenceContainer name="navigation.sections">
             <block class="Magento\Theme\Block\Html\Header\Logo" name="logo." />
@@ -104,15 +108,11 @@
 
         <!-- HERO SECTION-->
 
-
-
         <referenceContainer name="page.top">
             <referenceBlock name="navigation.sections" remove="true" />
 
             <container name="hero" label="hero" htmlTag="section" htmlClass="hero">
                 <container name="hero.inner" label="heroInner" htmlTag="div" htmlClass="hero__inner">
-                    <!-- <block class="Magento\Framework\View\Element\Template" name="hero.info" as="heroInfo" template="Magento_Theme::html/hero/info.phtml" /> -->
-                    <!-- <block class="Magento\Framework\View\Element\Template" name="hero.slider" as="heroSlider" after="hero-info" template="Magento_Theme::html/hero/slider.phtml" /> -->
                 </container>
             </container>
 

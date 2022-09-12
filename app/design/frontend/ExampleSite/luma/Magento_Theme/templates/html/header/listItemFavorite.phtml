@@ -1,5 +1,6 @@
-<li class="list__item list__item--desktop">
-  <button class="list__btn list__btn--amount" aria-label="favorite">
+<li class="wishlist-wrapper list__item list__item--desktop" data-bind="scope: 'wishlist'">
+  <a class="list__btn list__btn--amount" <?= /*@noEscape */ $block->getLinkAttributes() ?> aria-label="favorite">
     <i class="zmdi zmdi-favorite"></i>
-  </button>
+  </a>
+  <!-- <span class="counter qty" data-bind="text: wishlist().counter"></span> -->
 </li>

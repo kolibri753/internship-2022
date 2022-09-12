@@ -1,6 +1,63 @@
 @import "_variables.less";
 @import "_mixins.less";
 
+.page-main {
+	.wrapper();
+	margin: 0;
+	max-width: initial;
+}
+
+.page-wrapper>.page-bottom {
+	margin: 0;
+	padding: 0;
+	max-width: initial;
+}
+
+.block-static-block.widget {
+	margin-bottom: 0;
+}
+
+.copyright {
+	background-color: @blue;
+}
+
+.footer .nav-toggle {
+	display: none;
+}
+
+.navigation {
+	background-color: @white;
+	border-bottom: 1px solid @gray;
+	display: flex;
+	padding: 0 1.07rem 0 1.07rem;
+	max-width: initial;
+
+	.responsive(@xxl; {
+			padding: 1.07rem 12.86rem;
+		});
+
+	ul {
+		padding: 0;
+	}
+}
+
+.ui-menu {
+	padding: 0;
+	display: flex;
+}
+
+.navigation .level0>.level-top {
+	padding: 0;
+}
+
+.navigation .level0.active>.level-top {
+	border-color: @blue;
+}
+
+.navigation .level0 {
+	margin-right: 2em;
+}
+
 .header {
 	font-family: @montserrat;
 
@@ -189,16 +246,59 @@
 		justify-content: center;
 		grid-template-columns: repeat(1, 240px);
 		grid-auto-rows: 535px;
-	
+
+		.product-item-actions {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.actions-primary {
+			height: 100%;
+			width: 70%;
+
+			.btn {
+				width: 100%;
+			}
+		}
+
+		.actions-secondary {
+			margin-bottom: 1em;
+		}
+
 		.product-item .action.towishlist {
-			display: none;
+			height: 100%;
+			width: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&:before {
+				font-size: 1.5em;
+				height: 1.5em;
+				width: 1.5em;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: @blue;
+			}
+
+			&:hover {
+				&:before {
+					color: @white;
+				}
+			}
 		}
 
 		.responsive(@sm; {
 				grid-template-columns: repeat(auto-fit, 260px);
-				.product-item .action.towishlist {
-					display: block;
-				}
+
+				// .product-item .action.towishlist {
+				// 	height: 100%;
+				// 	display: flex;
+				// 	align-items: center;
+				// 	justify-content: center;
+				// }
+
 				// grid-auto-rows: 385px;
 			});
 
@@ -290,6 +390,7 @@
 .banners {
 	display: grid;
 	gap: 1.07em;
+	margin: 1em 0;
 
 	.responsive(@lg; {
 			grid-template-columns: repeat(2, 1fr);
