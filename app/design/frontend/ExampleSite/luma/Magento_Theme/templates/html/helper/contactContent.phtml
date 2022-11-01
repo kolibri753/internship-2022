@@ -7,10 +7,19 @@ use Magento\Framework\View\Element\Template;
 $nameStr = ($block->getNameInLayout());
 $nameStrArr = explode(".", $nameStr);
 $tagName = $nameStrArr[0];
+
+// $phone = \Magento\Framework\App\ObjectManager::getInstance()
+//   ->get(\Magento\Store\Model\StoreManagerInterface::class)
+//   ->getStore()
+//   ->getPhone();
+// $phone = getValue('general/store_information/name');
+
+$phone = $this->helper('Vahov\SystemConfigurationsSocials\Helper\Data')->getConfig('general/store_information/phone');
+
 ?>
 
 <p class="contact__text">Need help? Contact us now:</p>
-<a class="contact__number" href="tel:01-234-567">01 234 567</a>
+<a class="contact__number" href="tel:01-234-567"><?= $phone; ?></a>
 
 <?php if ($tagName === "header") : ?>
   <button class="language">EN</button>

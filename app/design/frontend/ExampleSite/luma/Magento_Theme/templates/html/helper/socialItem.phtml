@@ -7,12 +7,12 @@ use Magento\Framework\View\Element\Template;
 $nameStr = ($block->getNameInLayout());
 $nameStrArr = explode(".", $nameStr);
 $name = $nameStrArr[2];
+$url = $this->helper('Vahov\SystemConfigurationsSocials\Helper\Data')->getSystemConfig($name);
 
-$url = $block->getData("${name}_href");
 ?>
 
 <li class="socials__item">
-    <a class="socials__link" aria-label="<?= $name; ?>" href="<?= $url; ?>" target="_blank">
+    <a class="socials__link" aria-label="<?= $name; ?>" href='<?= $url; ?>' target="_blank">
         <i class="socials__icon zmdi zmdi-<?= $name; ?>"></i>
     </a>
 </li>

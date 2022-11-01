@@ -10,24 +10,12 @@
 
             <container name="header.socials" label="headerSocials" htmlTag="ul" htmlClass="header__socials socials">
                 <block class="Magento\Framework\View\Element\Template" name="header.socials.linkedin" as="linkedin" template="Magento_Theme::html/helper/socialItem.phtml">
-                    <arguments>
-                        <argument name="linkedin_href" xsi:type="string">https://www.linkedin.com/</argument>
-                    </arguments>
                 </block>
                 <block class="Magento\Framework\View\Element\Template" name="header.socials.facebook" as="facebook" template="Magento_Theme::html/helper/socialItem.phtml">
-                    <arguments>
-                        <argument name="facebook_href" xsi:type="string">https://www.facebook.com/</argument>
-                    </arguments>
                 </block>
                 <block class="Magento\Framework\View\Element\Template" name="header.socials.twitter" as="twitter" template="Magento_Theme::html/helper/socialItem.phtml">
-                    <arguments>
-                        <argument name="twitter_href" xsi:type="string">https://twitter.com/</argument>
-                    </arguments>
                 </block>
                 <block class="Magento\Framework\View\Element\Template" name="header.socials.instagram" as="instagram" template="Magento_Theme::html/helper/socialItem.phtml">
-                    <arguments>
-                        <argument name="instagram_href" xsi:type="string">https://www.instagram.com/</argument>
-                    </arguments>
                 </block>
             </container>
 

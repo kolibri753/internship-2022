@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+  <system>
+    <tab id="socials" sortOrder="10">
+      <label>Socials</label>
+    </tab>
+    <section id="socials_list" sortOrder="1" showInStore="1" showInDefault="1" showInWebsite="1" type="text">
+      <tab>socials</tab>
+      <resource>Vahov_SystemConfigurationsSocials::config</resource>
+      <label>Socials</label>
+      <group id="system" sortOrder="1" showInStore="1" showInDefault="1" showInWebsite="1" type="text">
+        <label>System Configuration</label>
+        <field id="linkedin" sortOrder="1" showInStore="1" showInDefault="1" showInWebsite="1" type="text">
+          <label>Linkedin</label>
+          <comment>link</comment>
+        </field>
+        <field id="facebook" sortOrder="2" showInStore="1" showInDefault="1" showInWebsite="1" type="text">
+          <label>Facebook</label>
+          <comment>link</comment>
+        </field>
+        <field id="twitter" sortOrder="3" showInStore="1" showInDefault="1" showInWebsite="1" type="text">
+          <label>Twitter</label>
+          <comment>link</comment>
+        </field>
+        <field id="instagram" sortOrder="4" showInStore="1" showInDefault="1" showInWebsite="1" type="text">
+          <label>Instagram</label>
+          <comment>link</comment>
+        </field>
+      </group>
+    </section>
+  </system>
+</config>
